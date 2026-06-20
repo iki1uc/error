@@ -1,1 +1,38 @@
-1
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>ERROR</title>
+</head>
+<body>
+
+<h1>RESPO: ERROR</h1>
+
+<h2>Sender:</h2>
+<p id="sender"></p>
+
+<h2>Bereich:</h2>
+<p id="bereich"></p>
+
+<h2>Fehler:</h2>
+<p id="fehler"></p>
+
+<hr>
+
+<a href="index.html">Zurück zu ROOT</a>
+
+<script>
+  const p = new URLSearchParams(window.location.search);
+
+  document.getElementById("sender").innerText =
+    p.get("from") || "unbekannt";
+
+  document.getElementById("bereich").innerText =
+    p.get("active") || "nicht gesetzt";
+
+  document.getElementById("fehler").innerText =
+    p.get("hint") || "Kein Fehler gemeldet.";
+</script>
+
+</body>
+</html>
